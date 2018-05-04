@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+
+{% block mainpage %}
+
+
+
+
+
+<div class="nav-bar" id="nav" >
+        <div class="wrapper-full">
+                <form action="." class="site-search" id="site-search" method="get">
+                    <div class="form-group">
+                        <label for="search">Поиск:</label>
+                      <div class="input-icon icon-search" id="icon-mp"></div>
+                        <input type="text"  placeholder="Поиск" class="form-search-bar" name="search" value="" id="username">
+                    </div>
+                    
+
+                </form>
+
+        </div>
+        <div class="container-mainpage">
+            <div id="sidebar">
+                <ul>
+                    <li><a href="">Реестр</a></li>
+                    <li><a href="#">База вендоров</a></li>
+                    <li><a href="#">База дистрибуторов</a></li>
+                        <li><a href="#">Sign Out</a></li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div class="swipe-area"></div>
+                <a href="" data-toggle=".container-mainpage" id="sidebar-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+                <div class="content">
+                    <h1>Creating Swipeable Side Menu For the Web</h1>
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+{% endblock %}

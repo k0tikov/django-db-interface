@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block mainpage %}
+<div class="overlay">
+  <nav class="overlayMenu">  
+    <ul>
+      <li><a href="registry">Реестр договоров</a></li>
+      <li><a href="#">База вендоров</a></li>
+      <li><a href="#">База дистрибуторов</a></li>
+      <li><a href="#">Sign Out</a></li>
+    </ul>
+  </nav>
+</div>
+<div class="navBurger"  id="navToggle"></div> 
+<div class="wrapper-full">
+  <form action="." class="site-search" id="site-search" method="get">
+    <div class="form-group" id="form-group-ct">
+      <label for="search">Поиск:</label>
+      <div class="input-icon icon-search" id="icon-mp"></div>
+      <input type="text"  placeholder="Поиск" class="form-search-bar" name="search" value="" id="username">
+    </div>
+    <div id="extended-search"><a href="advanced-search-form" id="a-extended-search"> Расширенный поиск </a></div>   
+  </form>
+</div>  
+<div class="pillar"> </div>
+<div class="content" id="found">
+  <form method="post">
+    {% csrf_token %}
+	<div id="button-div"><button type="submit" name="excel"> Сохранить в Excel </button></div>
+  </form>
+  <div class="table-content">
+    <table class="gl-table">
+      <th id="gl-th1"> Год </th>
+      <th id="gl-th3"> Наименование поставщика</th>
+      <th id="gl-th4"> Предмет договора </th>
+      <th id="gl-th5"> Номер </th>
+	  <th id="gl-th2"> Код в 1С </th>
+      <th id="gl-th6"> Дата договора </th>
+      <th id="gl-th7"> Срок действия договора </th>
+      <th id="gl-th8"> Сумма договора </th>
+      <th id="gl-th9"> Комментарии </th>
+      <th id="gl-th10"> Тех.описание</th>
+      <th id="gl-th11"> Теги </th>
+      <th id="gl-th12"> Статус </th>
+      <th id="gl-th13"> Подрядчик </th>
+      <th id="gl-th14"> № договора с подрядчиком </th>
+      {% for table in take_data_with_form  %}
+      <tr>
+        <td class="gl-td" > {{ table.date_of_completion }} </td>
+        <td class="gl-td3"> {{ table.name_of_buyer }} </td>
+        <td class="gl-td4"> {{ table.theme_of_contract }} </td>
+        <td class="gl-td5"> {{ table.number }} </td>
+		<td class="gl-td2"> {{ table.onec_code }} </td>
+        <td class="gl-td6"> {{ table.date_of_contract }} </td>
+        <td class="gl-td7"> {{ table.expiration }} </td>
+        <td class="gl-td8"> {{ table.total }} </td>
+        <td class="gl-td9"> {{ table.comments }} </td>
+        <td class="gl-td10"> {{ table.technical }} </td>
+        <td class="gl-td11"> {{ table.tags }} </td>
+        <td class="gl-td12"> {{ table.status }} </td> 
+        <td class="gl-td13"> {{ table.subcontractor }} </td>
+        <td class="gl-td14"> {{ table.check_number }} </td>
+      </tr>
+      {% endfor %}
+	</table>                          
+  </div>	 
+</div>
+<div id="cross"><a href="#" class="button-cross"></a></div> 
+<div class="deep-search-form"></div>
+{% endblock %}

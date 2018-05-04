@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block mainpage %}
+<div class="overlay">
+  <nav class="overlayMenu">  
+    <ul>
+      <li><a href="registry">Реестр договоров</a></li>
+      <li><a href="#">База вендоров</a></li>
+      <li><a href="#">База дистрибуторов</a></li>
+      <li><a href="#">Sign Out</a></li>
+    </ul>
+  </nav>
+</div>
+<div class="navBurger"  id="navToggle"></div> 
+<div class="wrapper-full">
+  <form action="." class="site-search" id="site-search" method="get">
+    <div class="form-group" id="form-group-ct">
+      <label for="search">Поиск:</label>
+      <div class="input-icon icon-search" id="icon-mp"></div>
+      <input type="text"  placeholder="Поиск" class="form-search-bar" name="search" value="" id="username">
+    </div>
+    <div id="extended-search">
+	  <a href="advanced-search-form" id="a-extended-search"> Расширенный поиск </a>
+	</div>  
+  </form>	
+</div>    
+<div class="pillar"> </div>
+{% endblock %}

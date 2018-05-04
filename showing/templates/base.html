@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTIYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Интерфейс управления Базами Данных</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}"></link>
+    <script type="text/javascript" src="{% static 'js/jquery.js'%}"></script>
+<!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+  </head>
+  <body>
+    {% block content %}{% endblock %}
+    {% block mainpage %}{% endblock %}
+    <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/sidebar.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/typeahead.js' defer %}"></script>
+    <script type="text/javascript" src="{% static 'js/search.js' defer %}"></script>
+    <script type="text/javascript" src="{% static 'js/check-form.js' defer %}"></script>
+    <script type="text/javascript" src="{% static 'js/dynamic-select.js' defer %}"></script>
+    <script type="text/javascript" src="{% static 'js/hideShow.js' defer %}"></script>
+	<script type="text/javascript" src="{% static 'js/wide-hide.js' defer %}"></script>
+  </body>
+</html>
+
+ 
